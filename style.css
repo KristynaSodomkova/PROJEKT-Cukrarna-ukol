@@ -1,0 +1,187 @@
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+
+/*
+	Poznámky:
+	- maximální šířka obsahu uvnitř sekcí je 1100px
+	- "pruh" s obsahem obsah je vycentrovaný na stránce
+	- všechny sekce mají nahoře a dole padding 80px
+	- kromě hlavičky a patičky, které mají jen 30px
+	- nadpisy jsou fontem Playfair Display, tučně
+	- veškerý další text na stránce fontem Lora
+	- výchozí velikost textu na stránce je 18px, řádkování 1.5
+
+	Velikosti nadpisů:
+	h1 - 52px  (nadpis v horní Hero sekci s cupcakem)
+	h2 - 36px  (nadpisy v dalších sekcích)
+	h3 - 18px  (název produktu v Dnešní nabídce)
+	Nadpisy mají řádkování jen 1.25
+
+
+font-family: 'Lora', serif;
+	Barvy:
+	#f195b2		růžová - tlačítka a zvýraznění
+	#d2567d		tmavá růžová - hover/aktivní tlačítka
+	#3e606b		tmavá tyrkysová - na nadpisy
+	#242424		(skoro) černá - na běžný text
+	#f0f0f0		světle šedé pozadí prostřední sekce
+	#303339		tmavé pozadí patičky
+*/
+
+/*general elements*/
+body {
+	margin: 0;
+	font-family: 'Lora', serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+img {
+	border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Playfair Display', serif;
+}
+
+h1{
+	font-size: 52px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+/*header = logo + menu*/
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+	max-width: 1100px;
+	margin: auto;
+}
+
+.menu {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+}
+
+.menu a{
+	text-decoration: none;
+	font-family: 'Lora', serif;
+	color: #242424;
+	padding: 10px 15px;
+	border-radius: 20px;
+}
+
+.menu a:hover{
+	background-color: #d2567d;
+}
+
+.logo img {
+	width: 170px;
+}
+
+/*hero = background image + h1 and text*/
+.hero {
+	background-image: url("images/cupcake.jpg");
+	background-size: cover;
+	color: white;
+	
+	padding: 80px 0;
+}
+
+.hero-inner {
+	max-width: 1100px;
+	margin: auto;
+}
+
+.hero p{
+	max-width: 60%;
+	font-size: 24px;
+	font-style: italic;
+}
+
+/*section welcome = welcome text + img*/
+.welcome {
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	padding: 80px 0;
+}
+
+.welcome-left {
+	padding-right: 30px;
+}
+
+.welcome-left a {
+	border-radius: 30px;
+	padding: 15px 40px;
+	background-color: #f195b2;
+	text-decoration: none;
+	color: white;
+	position: relative;
+	top: 30px;
+}
+
+.welcome-left a:hover {
+	background-color: #d2567d;
+}
+
+/*section todays-offer = product pictures + description*/
+.todays-offer {
+	background-color: #f0f0f0;
+	max-width: 1100px;
+	margin: auto;
+	padding: 80px 0;
+}
+.products {
+	display: flex;
+}
+.product {
+	padding-right: 30px;
+}
+
+.product4 {
+	padding-right: 0;
+}
+
+.products img {
+	max-width: 100%;
+}
+
+.description {
+	padding: 20px;
+	text-align: center;
+}
+
+/*section our approach = img + text*/
+.our-approach {
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	padding: 80px 0;
+}
+
+.our-approach-left {
+	padding-right: 30px;
+}
+
+/*footer*/
+.footer {
+	padding: 30px 0;
+	text-align: center;
+	background-color: #303339;
+	color: white;
+}
